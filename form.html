@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>설문조사 페이지</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        
+        h1 {
+            text-align: center;
+            background-color: #007acc;
+            color: #fff;
+            padding: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .radio-label {
+            display: flex;
+            align-items: center;
+        }
+
+        .radio-label input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        input[type="text"],
+        input[type="url"],
+        select,
+        textarea,
+        input[type="range"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        legend {
+            font-weight: bold;
+        }
+
+        input[type="submit"] {
+            background-color: #007acc;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #005eaa;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>설문조사</h1>
+    <form action="submit.php" method="post">
+        <label for="name">이름:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label>성별:</label>
+        <fieldset>
+            <div class="radio-label">
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">남성</label>
+            </div>
+            <div class="radio-label">
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">여성</label>
+            </div>
+        </fieldset><br>
+
+        <label for="studentID">학번:</label>
+        <input type="text" id="studentID" name="studentID" required><br><br>
+
+        <label for="major">학부:</label>
+        <select id="major" name="major" required>
+            <option value="global-leadership">글로벌 리더십</option>
+            <option value="international-studies">국제어문</option>
+            <option value="business-economics">경영경제</option>
+            <option value="law">법학부</option>
+            <option value="communication">커뮤니케이션</option>
+            <option value="counseling-welfare">상담복지</option>
+            <option value="life-science">생명과학</option>
+            <option value="space-environment-systems">공간환경시스템</option>
+            <option value="computer-electronics">전산전자</option>
+            <option value="content-fusion-design">콘텐츠융합디자인</option>
+            <option value="mechanical-control">기계제어</option>
+            <option value="ict-entrepreneurship">ICT창업학부</option>
+        </select><br><br>
+
+        <label for="rc">소속된 RC:</label>
+        <select id="rc" name="rc" required>
+            <option value="torrey">토레이</option>
+            <option value="janggi-ryeo">장기려</option>
+            <option value="kayper
+            ">카이vj</option>
+            <option value="son-yang-won">손양원</option>
+            <option value="yeol-song-haksa">열송학사</option>
+            <option value="kamaikel">카마이클</option>
+        </select><br><br>
+
+        <label for="rcAdvantages">소속된 RC의 장점:</label><br>
+        <textarea id="rcAdvantages" name="rcAdvantages" rows="4" cols="50"></textarea><br><br>
+
+        <label for="rcDisadvantages">소속된 RC의 단점:</label><br>
+        <textarea id="rcDisadvantages" name="rcDisadvantages" rows="4" cols="50"></textarea><br><br>
+
+        <label for="musicPreference">음악 선호도:</label>
+        <input type="range" id="musicPreference" name="musicPreference" min="1" max="10"><br><br>
+
+        <label for="hobbies">관심 있는 취미나 활동:</label><br>
+        <input type="text" id="hobbies" name="hobbies"><br><br>
+
+        <label for="profileLink">온라인 프로필 링크:</label><br>
+        <input type="url" id="profileLink" name="profileLink"><br><br>
+
+        <label for="mood">오늘 하루 어땠나요?</label><br>
+        <p style="font-size: small; color: rgb(75, 75, 75);">**오른쪽으로 향할 수록 긍정적입니다**</p>
+        <input type="range" id="mood" name="mood" min="1" max="10"><br><br>
+
+        <input type="submit" value="제출">
+    </form>
+</body>
+
+</html>
